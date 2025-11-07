@@ -88,10 +88,7 @@ app = Flask(__name__)
     #date = db.Column(db.String(20), nullable=False)
     #time = db.Column(db.String(10), nullable=False)
     #timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f'<Booking {self.name} on {self.date} at {self.time}>'
-
+   
 # 3. Kurema Database iyo application itangiye
 #with app.app_context():
     # Iki kirema dosiye 'salon_bookings.db' niba idahari
