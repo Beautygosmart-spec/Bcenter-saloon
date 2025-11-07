@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwandikisha Byanze</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="center-body">
+    <div class="failure-message">
+        <h1>❌ Turabasabye Imbabazi!</h1>
+        <p>Umwanya wo kuri **{{ date }}** saa **{{ time }}** **wafashwe** n'undi mukiriya.</p>
+        <p>Mwongere mutore **indi tariki** cyangwa **indi saha** ku rubuga rwo kwandikisha.</p>
+        <a href="{{ url_for('contact') }}" class="try-again-btn">Tora Umwanya Mushya</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BEAUTY SALOON CENTER. All rights reserved.</p>
+    </footer>
+</body>
+</html>

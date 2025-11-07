@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ya Admin - Kwandikisha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* CSS yihariye kuri Admin (Ushobora kuyishyira muri style.css na yo) */
+        .admin-table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        .admin-table th, .admin-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .admin-table th {
+            background-color: #00bcd4; /* Icyatsi cya Teal */
+            color: white;
+            cursor: pointer; /* Kugaragaza ko ishobora gutondekanywa (sorting) */
+        }
+        .admin-header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="admin-header">
+        <h1>Dashboard ya Admin - Kwandikisha Kwose</h1>
+        <p>Amakuru agaragaza amarangamutima yose (Bookings) aheruka.</p>
+    </header>
+
+    <main>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Izina Ryuzuye</th>
+                    <th>Email</th>
+                    <th>Serivisi</th>
+                    <th>Itariki</th>
+                    <th>Isaha</th>
+                    <th>Igihe Byasabweho</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.id }}</td>
+                    <td>{{ booking.name }}</td>
+                    <td>{{ booking.email }}</td>
+                    <td>{{ booking.service }}</td>
+                    <td><span style="font-weight: bold;">{{ booking.date }}</span></td>
+                    <td><span style="color: #ff5722;">{{ booking.time }}</span></td>
+                    <td>{{ booking.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {% if not bookings %}
+            <p style="text-align: center; margin-top: 50px;">Nta kwandikisha kuboneka kugeza ubu.</p>
+        {% endif %}
+
+    </main>
+
+    <footer>
+        <p style="text-align: center; padding: 10px;">&copy; 2025 Admin Dashboard</p>
+    </footer>
+
+</body>
+</html>

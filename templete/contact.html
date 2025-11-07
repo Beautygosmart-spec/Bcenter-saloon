@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwandikisha (Booking) - BEAUTY SALOON CENTER</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header id="page-header" class="contact-header">
+        <div class="header-overlay">
+            <h1>Saba Umwanya Wihariye</h1>
+            <p>Tora itariki n'isaha bikunogeye, maze wiyandikishe serivisi yose.</p>
+        </div>
+    </header>
+
+    <div class="page-container">
+        
+        <main id="main-content-contact">
+            <h2>📝 Form yo Kwandikisha</h2>
+            
+            <form id="booking-form" action="/submit-booking" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Amazina Yuzuye:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Serivisi Ushaka:</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Tora Serivisi --</option>
+                        <option value="hair_cut_woman">Gukata (Woman)</option>
+                        <option value="hair_cut_men">Gukata (Men)</option>
+                        <option value="braiding">Gufora</option>
+                        <option value="manicure">Manicure</option>
+                        </select>
+                </div>
+
+                <div class="form-group date-time-group">
+                    
+                    <label for="booking-date">Itariki:</label>
+                    <input type="date" id="booking-date" name="date" required>
+                    
+                    <button type="button" id="select-time-btn" class="time-button">Tora Isaha 🕒</button>
+                    <input type="hidden" id="selected-time" name="time" required> 
+                    <p id="time-display" class="selected-info">Isaha yatoranyijwe: **Nta N'imwe**</p>
+                </div>
+
+                <button type="submit" class="submit-btn">Kwandikisha Ubu!</button>
+                
+            </form>
+        </main>
+        
+        <aside id="contact-sidebar">
+            <div class="widget">
+                <h4>☎️ Duhamagare</h4>
+                <p>Niba wifuza ubufasha bwihuse, twandikire cyangwa uduhamagare:</p>
+                <p>Tel: +250 788 XXX XXX</p>
+                <p>Email: info@salooncenter.rw</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BEAUTY SALOON CENTER. All rights reserved.</p>
+    </footer>
+    
+   <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+/* style.css (Oya gukora copy/paste ya code yose, ahubwo ongeramo ibi bice cyangwa uhindure ibyahari) */
+
+/* Guhindura Body cyangwa Ibindi bice by'ibanze ubona bidakwiriye: */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Font igaragara neza */
+    margin: 0;
+    padding: 0;
+    /* Dushyizeho background itariho cyane kuko ifoto ni ingenzi */
+    background-color: #ffffff; 
+    color: #333;
+}
+
+/* ------------------------------------------------ */
+/* Igihe cyo Gushyira Ifoto ku Rukuta */
+/* ------------------------------------------------ */
+
+.landing-page-header {
+    /* Urasimbuza 'urukuta_rwiza.jpg' izina ry'ifoto yawe */
+    background-image: url('urukuta_rwiza.jpg'); 
+    background-size: cover; /* Gutuma ifoto igaragara hose */
+    background-position: center; /* Gutuma ifoto igaragara neza hagati */
+    height: 100vh; /* Ituma iki gice cyuzura screen yose */
+    display: flex;
+    flex-direction: column; /* Gutuma ibintu biza munsi ya buri kimwe */
+    justify-content: center; /* Kwita ku byanditswe hagati (vertical) */
+    align-items: center; /* Kwita ku byanditswe hagati (horizontal) */
+    text-align: center;
+    /* Gushyiraho agasarubura k'umukara kugira ngo inyuguti zigaragare neza ku ifoto */
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: overlay; /* Guhuza ibara rya black n'ifoto */
+}
+
+/* Kwegezwa k'Amagambo Aramukanya (H1) */
+.welcome-text {
+    font-size: 4em; /* Guhindura inyuguti zikaba nini cyane */
+    margin-bottom: 40px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+/* Amabara atandukanye */
+.welcome-black {
+    color: black; /* Umukara ku ijambo 'Welcome to' */
+    background-color: rgba(255, 255, 255, 0.8); /* Gushyiraho igikoresho cy'umweru gike kugira ngo Umukara ugaragare neza */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block; /* Guhita ijya ku murongo mushya */
+}
+
+.saloon-color {
+    color: #ff5722; /* Ibara rya Orange/Umukara wigitondo (Ubu ni urugero) */
+    display: block;
+    font-size: 0.7em; /* Kurigira rito ugereranyije na 'Welcome to' */
+    margin-top: 10px;
+}
+
+/* Amalink */
+.category-links {
+    margin-top: 40px;
+}
+
+.link-white {
+    color: white; /* Inyuguti z'umweru nk'uko wabyifuje */
+    text-decoration: none; /* Gukura uturongo munsi y'inyuguti */
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0 20px;
+    padding: 10px 15px;
+    border: 2px solid white; /* Gushyiraho uruziga rurimo umweru */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.link-white:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Guhindura ibara byoroshye iyo ukanzeho */
+}
+
+/* style.css (Kugirango Time Modal igaragare neza) */
+
+/* Modal (Popup) yose - Kwizingira hejuru ya page */
+.time-modal {
+    position: fixed; /* Guma ahantu hamwe */
+    z-index: 1000; /* Kuza hejuru y'ibindi byose */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Igicucu cy'umukara kinini */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Agace ka Modal kagaragarira umukiriya */
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 0.3s; /* Gushyiraho animation */
+}
+
+.modal-content h3 {
+    color: #ff5722; /* Ibara rikoresha (Accent Color) */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Gutunganya Amasaha */
+.time-slots-container {
+    display: flex;
+    flex-wrap: wrap; /* Gutuma ajya ku murongo mushya */
+    gap: 10px;
+    justify-content: center;
+    max-height: 300px; /* Kuyagira magufi kugira ngo akoreshe scroll */
+    overflow-y: auto; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.time-slot-btn {
+    background-color: #e0f7fa; /* Icyatsi cyoroshye cyane */
+    color: #00796b;
+    border: 1px solid #b2ebf2;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.time-slot-btn:hover {
+    background-color: #00bcd4; /* Icyatsi cyiza */
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Button yo Gufunga */
+.close-modal-btn {
+    background-color: #f44336; /* Umutuku wo gufunga */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.close-modal-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Animation yo kugaragara neza */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+/* Turashobora gukomeza ku gice cy'ibiriho (content) ejo */
+#content {
+    /* Tuzakoresha umwanya w'iyi section mu kugaragaza services zanyu z'ingenzi */
+    padding: 20px;
+}
+/* style.css (ONGERAHO IBI BICE MURI DOSIYE YAWE YA style.css) */
+
+/* ------------------------------------------------ */
+/* CSS ya Woman Page Header */
+/* ------------------------------------------------ */
+
+.woman-header {
+    /* Ifoto y'urukuta (Gusimbura n'iyawe) */
+    background-image: url('woman_page_background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh; /* Kureba neza kurusha 100vh ya mbere */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.header-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Agasarubura k'umukara */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2; /* Kuza hejuru ya video */
+}
+
+/* Video: Gushyira Video hasi/ku ruhande gato */
+.video-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Video ntoya yo kwamamaza */
+    height: 170px;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ------------------------------------------------ */
+/* CSS yo Guhuza Main Content na Sidebar */
+/* ------------------------------------------------ */
+
+.page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    /* Kwemeza uburyo ibice bigabanywa: 2/3 (Main) na 1/3 (Sidebar) */
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+}
+
+/* Igice cya Main Content */
+#main-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Igice cy'Ibyanditswe (Sidebar) */
+#right-sidebar {
+    padding-top: 20px;
+}
+
+.widget {
+    background-color: #ffe0b2; /* Ibara ryiza rya Orange (Soft Orange) */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-widget {
+    display: inline-block;
+    background-color: #ff9800;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Tables (Urutonde rw'Ibiciro) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+/* style.css (ONGERAHO IBI BICE MURI DOSIYE YAWE YA style.css KU KIRA CYA NYUMA) */
+
+/* ------------------------------------------------ */
+/* CSS yihariye kuri Page y'Abagabo (Men Page Styles) */
+/* ------------------------------------------------ */
+
+/* Header yihariye y'Abagabo */
+.men-header {
+    /* Ifoto y'urukuta yihariye y'Abagabo */
+    background-image: url('men_page_background.jpg'); 
+    background-size: cover;
+    background-position: top; /* Gushyira Abagabo hejuru */
+    min-height: 40vh;
+}
+
+.men-header .header-overlay {
+    background-color: rgba(0, 0, 80, 0.6); /* Ubururu Bwirabura */
+}
+
+/* Widgets y'Abagabo (Kugira ngo ijyeho ibara ryihariye) */
+.widget-men {
+    background-color: #b2ebf2; /* Icyatsi cyoroshye cyane (Soft Teal) */
+    /* Ushobora no gukoresha #cfd8dc (Ibara rya Gray yoroheje) */
+}
+
+/* Button y'Abagabo muri Widget */
+.btn-widget-men {
+    display: inline-block;
+    background-color: #00bcd4; /* Icyatsi cyiza (Bright Teal) */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-widget-men:hover {
+    background-color: #0097a7;
+}
+
+/* Gushyira amabara y'umutwe w'ibice (Headers) byihariye */
+#main-content .service-category h3 {
+    border-left: 5px solid #00bcd4; /* Umuzenguruko w'Icyatsi cyiza */
+    padding-left: 10px;
+}
+
+/* style.css (ONGERAHO IBI BICE MURI DOSIYE YAWE YA style.css) */
+
+/* ------------------------------------------------ */
+/* CSS ya Contact/Booking Page */
+/* ------------------------------------------------ */
+
+.contact-header {
+    background-image: url('contact_background.jpg'); /* Ifoto nziza ijanya no kwandikisha */
+    min-height: 30vh;
+    /* Koresha ubururu cyangwa iccyatsi (teal) nk'ubwo twakoresheje mbere */
+    background-color: rgba(0, 50, 80, 0.6); 
+    background-blend-mode: overlay;
+}
+
+#main-content-contact {
+    /* Turahindura layout kugira ngo Form yigaragaze neza hagati */
+    grid-column: 1 / span 2; /* Ituma igabana umwanya wose wa page-container */
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.page-container {
+    /* Twahinduye uburyo bwa Grid kugira ngo sidebar ijye ku ruhande muri contact page */
+    grid-template-columns: 2fr 1fr; 
+}
+
+/* Form Styling */
+#booking-form {
+    padding: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ituma padding idasumbisha input */
+}
+
+/* Kwegezanya neza input ya Date na Button */
+.date-time-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.date-time-group input[type="date"] {
+    flex: 1; /* Ifata umwanya muremure */
+    margin-right: 15px;
+}
+
+.time-button {
+    background-color: #ff5722; /* Ibara ryo Kwihererana (Accent Color) */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.time-button:hover {
+    background-color: #e64a19;
+}
+
+.selected-info {
+    width: 100%;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #00bcd4; /* Icyatsi cyiza (Primary Color) */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0097a7;
+}
+/* style.css */
+/* ... (Aha hejuru hari style zindi) ... */
+
+/* Gushyiraho style kuri Link nshya kugira ngo yimeze nka Button */
+#book-now-link {
+    /* Turahindura style twari twahaye #learn-more-btn tuyihe #book-now-link */
+    background-color: #28a745; /* Icyatsi gitoshye */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Nkura uturongo munsi ya link */
+    font-weight: bold;
+    display: inline-block;
+}
+
+#book-now-link:hover {
+    background-color: #1e7e34;
+}
+/* style.css (Ongeramo aya Mabara hasi cyane) */
+
+.center-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh; /* Kugira ngo iyuzuze byibuze 90% ya screen */
+    text-align: center;
+}
+
+.confirmation-message, .failure-message {
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.confirmation-message {
+    background-color: #e8f5e9; /* Icyatsi Kibisi cyoroheje */
+    border-left: 5px solid #4caf50;
+}
+
+.failure-message {
+    background-color: #ffebee; /* Umutuku w'Ubworohe */
+    border-left: 5px solid #f44336;
+}
+
+.back-home-btn, .try-again-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.back-home-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.try-again-btn {
+    background-color: #2196f3; /* Ubururu */
+    color: white;
+}
+
