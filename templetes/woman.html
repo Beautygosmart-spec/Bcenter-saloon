@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOMAN, Abagore - Saloon Services</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -13,10 +13,12 @@
             <h1>Ikaze mu Isi y'Ubwiza bw'Abagore</h1>
             <p>Turi abahanga mu kugutera itoto rishya no kugira umwihariko.</p>
         </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="your-video-link?autoplay=1&mute=1" 
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+       <div class="video-container">
+    <video controls loop autoplay muted class="responsive-video">
+        <source src="{{ url_for('static', filename='videos/Port folio_liveCV.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
     </header>
 
     <div class="page-container">

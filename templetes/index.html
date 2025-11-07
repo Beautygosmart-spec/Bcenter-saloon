@@ -10,16 +10,17 @@
 <body>
 
     <header id="main-header" class="landing-page-header"> 
-        <h1 class="welcome-text">
-            <span class="welcome-black">Welcome to</span> 
-            <span class="saloon-color">BEAUTY SALOON CENTER</span>
-        </h1>
-        
-        <div class="category-links">
-            <a href="woman.html" class="link-white">WOMAN, Abagore</a> 
-            <a href="men.html" class="link-white">MEN, Abagabo</a>
-			
-        </div>
+    <h1 class="welcome-text">
+        <span class="welcome-black">Welcome to</span> 
+        <span class="saloon-color">BEAUTY SALOON CENTER</span>
+    </h1>
+    
+    <div class="category-links">
+        <a href="{{ url_for('woman') }}" class="link-white">WOMAN, Abagore</a>  
+        <a href="{{ url_for('men') }}" class="link-white">MEN, Abagabo</a>
+        <a href="{{ url_for('contact') }}" class="link-white">CONTACT, Twandikire</a> 
+    </div>
+</header>
 		
         
     </header>
