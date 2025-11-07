@@ -66,7 +66,7 @@ if __name__ == '__main__':
     
     # app.py - Python Backend (Harimo Database ya SQLite)
 from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 import os
 from datetime import datetime
 
@@ -80,22 +80,22 @@ app = Flask(__name__)
 
 # 2. Gukora Uburanga bwa Data (Model)
 # Iyi Class igaragaza uburyo buri 'booking' buzabikwa muri Database
-class Booking(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    service = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.String(20), nullable=False)
-    time = db.Column(db.String(10), nullable=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+#class Booking(db.Model):
+ #   id = db.Column(db.Integer, primary_key=True)
+  #  name = db.Column(db.String(100), nullable=False)
+   # email = db.Column(db.String(100), nullable=False)
+    #service = db.Column(db.String(100), nullable=False)
+    #date = db.Column(db.String(20), nullable=False)
+    #time = db.Column(db.String(10), nullable=False)
+    #timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return f'<Booking {self.name} on {self.date} at {self.time}>'
 
 # 3. Kurema Database iyo application itangiye
-with app.app_context():
+#with app.app_context():
     # Iki kirema dosiye 'salon_bookings.db' niba idahari
-    db.create_all()
+ #   db.create_all()
 
 # 4. Routes nk'uko twari twabikoze mbere
 @app.route('/')
@@ -121,22 +121,22 @@ def submit_booking():
         # Twashobora kongeramo Logic ihamye ya Python kureba amasaha y'akazi (6:00-21:00)
         
         # B. Kureba niba uwo mwanya utarafashwe
-        existing_booking = Booking.query.filter_by(date=date, time=time).first()
-        if existing_booking:
+        #existing_booking = Booking.query.filter_by(date=date, time=time).first()
+        #if existing_booking:
             # Niba umwanya uyafashwe
-            print(f"ERROR: Umwanya kuri {date} saa {time} wafashwe na {existing_booking.name}.")
+          #  print(f"ERROR: Umwanya kuri {date} saa {time} wafashwe na {existing_booking.name}.")
             # Tugomba gukora page nshya ivuga ko byanze
-            return render_template('booking_failed.html', date=date, time=time) 
+         #   return render_template('booking_failed.html', date=date, time=time) 
 
         # C. Kubika Booking Nshya muri Database
         new_booking = Booking(name=name, email=email, service=service, date=date, time=time)
-        db.session.add(new_booking)
-        db.session.commit()
+     #   db.session.add(new_booking)
+      #  db.session.commit()
         
         print(f"SUCCESS: Booking ya {name} yemejwe kuri {date} saa {time}.")
         
         # D. Gusubiza Umukiriya kuri Confirmation Page
-        return redirect(url_for('booking_success'))
+       # return redirect(url_for('booking_success'))
 
     except Exception as e:
         print(f"Database Error: {e}")
@@ -164,10 +164,10 @@ if __name__ == '__main__':
     # app.py (Ikosora ku Gice cya Admin)
 
 # Route nshya yo kureba bookings zose (Admin only!)
-@app.route('/admin-bookings')
-def view_bookings():
+#@app.route('/admin-bookings')
+#def view_bookings():
     # Kugaragaza Bookings zose, zitondekanye kuva ku iheruka (descending)
-    bookings = Booking.query.order_by(Booking.timestamp.desc()).all()
+ #   bookings = Booking.query.order_by(Booking.timestamp.desc()).all()
     
     # Iki ni igice cy'ingenzi! Duhaye Template amakuru (bookings)
-    return render_template('admin_bookings.html', bookings=bookings)
+    #return render_template('admin_bookings.html', bookings=bookings)
