@@ -74,9 +74,9 @@ from datetime import datetime
 app = Flask(__name__)
 # Gushyira database mu dosiye imwe mu folder ya Saloon
 # Izitwa 'salon_bookings.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///salon_bookings.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///salon_bookings.db'
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#db = SQLAlchemy(app)
 
 # 2. Gukora Uburanga bwa Data (Model)
 # Iyi Class igaragaza uburyo buri 'booking' buzabikwa muri Database
