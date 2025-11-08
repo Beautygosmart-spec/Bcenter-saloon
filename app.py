@@ -73,9 +73,7 @@ def submit_booking():
 @app.route('/success')
 def booking_success():
     return render_template('confirmation.html')
-
 # --- Gutangiza Application ---
-if __name__ == '__main__':
-    # Iki kibazo twagikemuye na Procfile, ariko birakomeza kuguma neza
+if __name__ == '__main__':    
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
