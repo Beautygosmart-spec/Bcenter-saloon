@@ -9,7 +9,7 @@ app = Flask(__name__)
 # --- ROUTES Z'INGENZI ---
 
 # 1. Route ya Homepage (Iki ni cyo kigabanya ikosa)
-@app_flask.route('/') # Koresha app_flask
+@app.route('/') # Koresha app_flask
 def index():
     try:
         # Genzura neza ko index.html iri muri templates
@@ -49,4 +49,4 @@ def booking_success():
 
 # --- Gutangiza Application ---
 if __name__ == '__main__':
-    app_flask.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=True)

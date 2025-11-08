@@ -500,4 +500,20 @@ table th {
     background-color: #2196f3; /* Ubururu */
     color: white;
 }
+/* style.css */
+
+/* Urashobora gukoresha Flexbox cyangwa text-align: center */
+
+footer {
+    width: 100%; /* Ibi byemeza ko footer yuzuye page yose */
+    padding: 20px 0; /* Gushyiraho umwanya hejuru no hasi */
+    background-color: #333; /* Urugero rwa background */
+    color: white; /* Urugero rw'amabara */
+    
+    /* Iyi ni yo code izihererekanya! */
+    text-align: center; 
+}
+
+/* Niba hari elements imbere ya footer (urugero, div cyangwa p),
+   text-align: center ihora ibikorera kuri nyandiko imbere. */
 

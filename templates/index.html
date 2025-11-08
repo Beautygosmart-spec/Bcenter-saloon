@@ -1,52 +1,36 @@
-# app.py - Final Clean Version for Render Deployment (No DB)
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAUTY SALOON CENTER - HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
-from flask import Flask, render_template, request, redirect, url_for
-from datetime import datetime
+    <header id="main-header" class="landing-page-header"> 
+        <h1 class="welcome-text">
+            <span class="welcome-black">Welcome to</span> 
+            <span class="saloon-color">BEAUTY SALOON CENTER</span>
+        </h1>
+        
+        <div class="category-links">
+            <a href="{{ url_for('woman') }}" class="link-white">WOMAN, Abagore</a> 
+            <a href="{{ url_for('men') }}" class="link-white">MEN, Abagabo</a>
+            <a href="{{ url_for('contact') }}" class="link-white">CONTACT, Twandikire</a> 
+        </div>
+    </header>
 
-# Gukosora Itegeko rya Environment
-app = Flask(__name__)
+    <section id="content">
+        <h2>Ikaze, turahatanze serivisi zidasanzwe!</h2>
+        <p>Iyi ni Homepage nshya, ubu Website igomba gukora neza!</p>
+        <a href="{{ url_for('contact') }}" class="btn-main">Kwandikisha (Book Now)</a>
+    </section>
 
-# --- ROUTES Z'INGENZI ---
-
-# 1. Route ya Homepage (Iki ni cyo kigabanya ikosa)
-@app.route('/')
-def index():
-    try:
-        # Genzura neza ko index.html iri muri templates
-        return render_template('index.html') 
-    except Exception as e:
-        # Ibi bitwereka ikosa nyaryo niba application yanze
-        print(f"Error rendering index.html: {e}") 
-        return "Internal Error: Check Flask logs for template or variable errors.", 500
-
-# 2. Routes z'Icyerekezo 
-@app.route('/men')
-def men():
-    return render_template('men.html')
-
-@app.route('/woman')
-def woman():
-    return render_template('woman.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-# 3. Route yo Kwandikisha (Submission)
-@app.route('/submit-booking', methods=['POST'])
-def submit_booking():
-    # ... (Yakira amakuru, nta DB) ...
-    name = request.form.get('name')
-    email = request.form.get('email')
-    # ... (yakira andi makuru) ...
+    <footer>
+        <p>&copy; 2025 BEAUTY SALOON CENTER. All rights reserved.</p>
+    </footer>
     
-    print(f"Akwandikisha Mashya Yagezeho: {name}")
-    return redirect(url_for('booking_success')) 
-
-@app.route('/success')
-def booking_success():
-    return render_template('confirmation.html')
-
-# --- Gutangiza Application ---
-if __name__ == '__main__':
-    app.run(debug=True)
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
