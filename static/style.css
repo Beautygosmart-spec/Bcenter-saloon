@@ -517,13 +517,27 @@ footer {
 /* Niba hari elements imbere ya footer (urugero, div cyangwa p),
    text-align: center ihora ibikorera kuri nyandiko imbere. */0
    /* style.css */
+/* style.css */
+
+/* Tuvana background-image muri .landing-page-header... */
 .landing-page-header {
-    /* Urasobanura neza aho ishusho iri, urugero: */
-    background-image: url('images/urukuta-rwiza.jpg'); 
-    background-size: cover;
+    /* ... (Ibindi byose bya CSS bya header biguma hano) ... */
+    min-height: 400px; /* Cyangwa uko uyishaka */
+    /* background-image, background-size, etc. BIVUYE HANO! */
+}
+
+/* Noneho, DUHINDUYE TUKAYISHYIRA KURI BODY! */
+body {
+    /* Urasaba dosiye iri ku rwego rumwe na style.css, muri static/ */
+    background-image: url('urukuta-rwiza.jpg'); 
+    background-size: cover; /* Iyi ni yo ikwiza page yose */
+    background-attachment: fixed; /* Buri gihe iguma aho, ntabwo izamuka */
     background-position: center;
     background-repeat: no-repeat;
-    /* ... andi ma CSS ... */
+    
+    /* Gukuraho umwanya w'imbere wa body (Default) */
+    margin: 0; 
+    padding: 0;
 }
    
 
