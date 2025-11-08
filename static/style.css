@@ -515,5 +515,15 @@ footer {
 }
 
 /* Niba hari elements imbere ya footer (urugero, div cyangwa p),
-   text-align: center ihora ibikorera kuri nyandiko imbere. */
+   text-align: center ihora ibikorera kuri nyandiko imbere. */0
+   /* style.css */
+.landing-page-header {
+    /* Urasobanura neza aho ishusho iri, urugero: */
+    background-image: url('images/urukuta-rwiza.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* ... andi ma CSS ... */
+}
+   
 
