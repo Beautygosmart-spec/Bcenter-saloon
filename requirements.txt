@@ -1,5 +1,5 @@
-# requirements.txt
+# requirements.txt (Ikosoye)
 Flask
 Flask-SQLAlchemy
 gunicorn
-psycopg2-binary  <--- Wongeyeho uyu murongo!
+psycopg2-binary
