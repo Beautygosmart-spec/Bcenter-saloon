@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Gushyiraho Database URI: Render irazishaka muri Environment
 # Iyi irahita isoma DATABASE_URL twashyize kuri Render
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Kwemeza SQLAlchemy
